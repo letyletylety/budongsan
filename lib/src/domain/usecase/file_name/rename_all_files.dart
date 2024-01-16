@@ -1,4 +1,4 @@
-import 'usecase.dart';
+import '../usecase.dart';
 
 @usecase
 class RenameAllFileUseCase extends UseCase {
