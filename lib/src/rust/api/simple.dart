@@ -8,3 +8,34 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 String greet({required String name, dynamic hint}) =>
     RustLib.instance.api.greet(name: name, hint: hint);
+
+Future<DynamicImage> makeWatermark(
+        {required String watermarkText, dynamic hint}) =>
+    RustLib.instance.api
+        .makeWatermark(watermarkText: watermarkText, hint: hint);
+
+Future<void> putWatermark(
+        {required String filePath,
+        required String watermarkText,
+        dynamic hint}) =>
+    RustLib.instance.api.putWatermark(
+        filePath: filePath, watermarkText: watermarkText, hint: hint);
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::rust_async::RwLock<DynamicImage>>
+@sealed
+class DynamicImage extends RustOpaque {
+  DynamicImage.dcoDecode(List<dynamic> wire)
+      : super.dcoDecode(wire, _kStaticData);
+
+  DynamicImage.sseDecode(int ptr, int externalSizeOnNative)
+      : super.sseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_DynamicImage,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_DynamicImage,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_DynamicImagePtr,
+  );
+}
