@@ -109,6 +109,42 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('파일 이름 수정하기'),
             ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellowAccent[400],
+                  foregroundColor: Colors.black87,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    RouteHelper.slideUpPageRoute(
+                      const CasaExplorer(),
+                    ),
+                  );
+                },
+                child: const Text('매물 목록 보기'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber[800],
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    RouteHelper.slideUpPageRoute(
+                      const PutWatermark(),
+                    ),
+                  );
+                },
+                child: const Text('워터마크 추가'),
+              ),
+            ),
           ],
         ),
       ),
